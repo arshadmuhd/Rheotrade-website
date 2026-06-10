@@ -122,7 +122,20 @@ h1 {
   .float-card-1, .float-card-3 { display: none; }
   .float-card-2 { right: 0; }
 }
+@media (max-width: 768px) {
+  .hero { padding: 64px 0 48px; }
+  h1 { font-size: 36px; }
+  .hero-sub { font-size: 16px; }
+  .hero-cta { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .hero-trust { flex-wrap: wrap; }
+  .db-stat-value { font-size: 15px; }
+}
 @media (max-width: 640px) {
-  .hero { padding: 72px 0 48px; }
+  .hero { padding: 48px 0 36px; }
   .float-card-2 { display: none; }
+  .hero-cta .btn-primary, .hero-cta .btn-ghost { width: 100%; justify-content: center; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 30px; }
+  .hero-trust { display: none; }
 }

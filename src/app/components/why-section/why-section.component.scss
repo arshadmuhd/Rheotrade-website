@@ -40,4 +40,15 @@
 }
 
 @media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 640px)  { .why-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .why { padding: 64px 0; }
+  .why-header { margin-bottom: 40px; }
+  .why-card { padding: 24px; }
+  .why-num { font-size: 44px; }
+}
+@media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .why { padding: 48px 0; }
+  .why-card h3 { font-size: 16px; }
+  .why-num { font-size: 36px; margin-bottom: 10px; }
+}

@@ -102,6 +102,13 @@ img { display: block; max-width: 100%; }
   }
 }
 
+@media (max-width: 640px) {
+  .btn-primary { padding: 12px 22px; font-size: 14px; }
+  .btn-ghost   { padding: 11px 18px; font-size: 14px; }
+  .card        { padding: 20px; }
+  .section-sub { font-size: 15px; }
+}
+
 .icon-tile {
   width: 48px; height: 48px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center;

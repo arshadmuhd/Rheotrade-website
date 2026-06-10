@@ -14,3 +14,9 @@
 .author-role { font-size: 12.5px; color: var(--text-soft); }
 
 @media (max-width: 1024px) { .t-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; } }
+@media (max-width: 768px) { .testimonials { padding: 56px 0; } }
+@media (max-width: 480px) {
+  .testimonials { padding: 40px 0; }
+  .t-grid { max-width: 100%; }
+  .quote { font-size: 14px; }
+}

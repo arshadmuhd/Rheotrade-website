@@ -6,11 +6,12 @@
 }
 .trust-inner {
   display: flex; align-items: center; justify-content: center;
-  gap: 20px; flex-wrap: wrap;
+  gap: 16px; flex-wrap: wrap;
 }
 .trust-label {
   font-size: 12px; font-weight: 700; text-transform: uppercase;
   letter-spacing: .06em; color: var(--text-soft);
+  width: 100%; text-align: center;
 }
 .trust-country {
   display: flex; align-items: center; gap: 6px;
@@ -18,3 +19,16 @@
   .flag { font-size: 20px; }
 }
 .divider { width: 1px; height: 20px; background: var(--border); }
+
+@media (max-width: 768px) {
+  .trust-inner { gap: 10px 16px; }
+  .divider { display: none; }
+  .trust-country { font-size: 12.5px; }
+  .trust-label { margin-bottom: 4px; }
+}
+@media (max-width: 480px) {
+  .trust-strip { padding: 16px 0; }
+  .trust-label { display: none; }
+  .trust-country { font-size: 12px; gap: 4px; }
+  .trust-inner { gap: 8px 12px; }
+}

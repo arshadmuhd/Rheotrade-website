@@ -1,0 +1,23 @@
+<nav [class.scrolled]="scrolled()">
+  <div class="nav-inner container">
+    <a class="nav-logo" routerLink="/">
+      <img src="logo-horizontal.png" alt="Rheotrade" />
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      <li><a routerLink="/" fragment="features" (click)="menuOpen.set(false)">Features</a></li>
+      <li><a routerLink="/" fragment="pricing" (click)="menuOpen.set(false)">Pricing</a></li>
+      <li><a routerLink="/" fragment="who" (click)="menuOpen.set(false)">Solutions</a></li>
+      <li><a routerLink="/about" (click)="menuOpen.set(false)">About</a></li>
+      <li><a routerLink="/contact" (click)="menuOpen.set(false)">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <span class="nav-login">Log in</span>
+      <button class="btn-primary" (click)="modal.open()">Start Free</button>
+      <button class="hamburger" (click)="menuOpen.set(!menuOpen())" [attr.aria-expanded]="menuOpen()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>

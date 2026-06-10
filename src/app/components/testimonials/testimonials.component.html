@@ -1,0 +1,23 @@
+<section class="testimonials">
+  <div class="container">
+    <div class="t-header">
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title">Businesses love Rheotrade</h2>
+    </div>
+    <div class="t-grid">
+      @for (t of testimonials; track t.name) {
+        <div class="card t-card" appScrollReveal>
+          <div class="stars">★★★★★</div>
+          <p class="quote">{{ t.quote }}</p>
+          <div class="author">
+            <div class="avatar" [style.background]="t.color">{{ t.initial }}</div>
+            <div>
+              <div class="author-name">{{ t.name }}</div>
+              <div class="author-role">{{ t.role }}</div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

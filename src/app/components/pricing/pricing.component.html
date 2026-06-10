@@ -1,0 +1,38 @@
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">Simple, transparent pricing</h2>
+      <p class="section-sub">No surprise fees. No per-module charges. Cancel anytime.</p>
+    </div>
+
+    <div class="pricing-toggle">
+      <span class="toggle-label" [class.active]="!annual()">Monthly</span>
+      <button class="toggle-track" (click)="annual.set(!annual())" [attr.aria-pressed]="annual()">
+        <div class="toggle-thumb" [class.on]="annual()"></div>
+      </button>
+      <span class="toggle-label" [class.active]="annual()">Annual</span>
+      <span class="save-badge">Save 20%</span>
+    </div>
+
+    <div class="pricing-grid">
+      @for (plan of plans; track plan.id) {
+        <div class="card pricing-card" [class.featured]="plan.featured" appScrollReveal>
+          @if (plan.featured) { <div class="featured-badge">Most popular</div> }
+          <div class="plan-name" [style.color]="plan.featured ? '#fff' : plan.color">{{ plan.name }}</div>
+          <div class="plan-price">{{ price(plan) }}<span class="per-mo" [class.hidden]="!plan.monthlyPrice">/mo</span></div>
+          <div class="plan-cycle">{{ plan.cycle }}</div>
+          <button class="btn-plan" [class.solid]="plan.featured" [class.outline]="plan.featured" (click)="modal.open()">
+            {{ plan.cta }}
+          </button>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            @for (f of plan.features; track f) {
+              <li><span class="check">✓</span> {{ f }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header">
+      <span class="section-label">Platform</span>
+      <h2 class="section-title">Everything your business needs,<br/>built into one platform</h2>
+      <p class="section-sub">No integrations, no juggling apps. Accounts, sales, inventory, tax — all talking to each other, automatically.</p>
+    </div>
+    <div class="features-grid">
+      @for (f of features; track f.title) {
+        <div class="card feature-card" appScrollReveal>
+          <div class="icon-tile" [style.background]="f.color">{{ f.icon }}</div>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.body }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

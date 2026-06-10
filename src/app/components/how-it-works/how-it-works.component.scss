@@ -1,0 +1,40 @@
+.how { padding: 96px 0; background: var(--surface); }
+
+.how-header {
+  text-align: center; margin-bottom: 64px;
+  .section-title { margin-top: 10px; margin-bottom: 12px; }
+  .section-sub { margin: 0 auto; }
+}
+
+.steps-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 40px; position: relative;
+  &::before {
+    content: '';
+    position: absolute; top: 32px;
+    left: calc(16.66% + 32px); right: calc(16.66% + 32px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), #818cf8);
+    opacity: .3;
+  }
+}
+
+.step {
+  text-align: center; padding: 0 16px;
+  h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  p  { font-size: 14.5px; color: var(--text-mid); line-height: 1.65; }
+}
+
+.step-number {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, var(--primary) 0%, #818cf8 100%);
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 800; color: #fff;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(59,130,246,.25);
+}
+
+@media (max-width: 768px) {
+  .steps-grid { grid-template-columns: 1fr; gap: 32px; &::before { display: none; } }
+}

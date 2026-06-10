@@ -1,0 +1,11 @@
+<div class="trust-strip">
+  <div class="trust-inner container">
+    <span class="trust-label">Operating across</span>
+    @for (c of countries; track c.name; let last = $last) {
+      <div class="trust-country">
+        <span class="flag">{{ c.flag }}</span> {{ c.name }}
+      </div>
+      @if (!last) { <div class="divider"></div> }
+    }
+  </div>
+</div>

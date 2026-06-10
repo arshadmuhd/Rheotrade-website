@@ -1,0 +1,57 @@
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(16,42,76,.45);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  animation: fadeIn .2s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  background: var(--surface); border-radius: 28px; padding: 48px;
+  max-width: 480px; width: 100%; text-align: center;
+  box-shadow: 0 32px 80px rgba(16,42,76,.22);
+  position: relative;
+  animation: slideUp .3s ease;
+}
+@keyframes slideUp { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.modal-close {
+  position: absolute; top: 18px; right: 18px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--bg); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--text-mid);
+  transition: background .2s;
+  &:hover { background: var(--border); }
+}
+
+.modal-emoji { font-size: 52px; margin-bottom: 16px; line-height: 1; }
+
+.launch-date {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--sky); color: var(--sky-ink);
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 13px; font-weight: 700; margin-bottom: 20px;
+}
+
+h2 { font-size: 26px; font-weight: 800; color: var(--navy); letter-spacing: -.03em; margin-bottom: 12px; }
+p { font-size: 15.5px; color: var(--text-mid); line-height: 1.65; margin-bottom: 28px; strong { color: var(--navy); } }
+
+.modal-form { display: flex; gap: 10px; }
+
+.modal-input {
+  flex: 1; padding: 13px 18px; border-radius: 100px;
+  border: 1.5px solid var(--border); font-family: var(--font); font-size: 14.5px;
+  color: var(--text); outline: none; transition: border-color .2s, box-shadow .2s;
+  &:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(59,130,246,.1); }
+  &::placeholder { color: var(--text-soft); }
+}
+
+.modal-note { font-size: 12.5px; color: var(--text-soft); margin: 14px 0 0; }
+
+@media (max-width: 480px) {
+  .modal { padding: 32px 20px; }
+  .modal-form { flex-direction: column; }
+}

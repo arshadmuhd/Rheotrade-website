@@ -1,0 +1,32 @@
+@if (modal.isOpen()) {
+  <div class="modal-overlay" (click)="onOverlayClick($event)">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" (click)="modal.close()" aria-label="Close">✕</button>
+
+      @if (!submitted()) {
+        <div class="modal-emoji">🚀</div>
+        <div class="launch-date">📅 25 July 2026</div>
+        <h2>We're launching on 25 July 2026</h2>
+        <p>Rheotrade is almost ready. Leave your email and we'll notify you the moment it goes live — plus get 3 months free on Growth.</p>
+        <div class="modal-form">
+          <input
+            class="modal-input"
+            type="email"
+            placeholder="your&#64;email.com"
+            [(ngModel)]="email"
+            (keyup.enter)="submit()"
+          />
+          <button class="btn-primary" (click)="submit()" [disabled]="loading()">
+            {{ loading() ? '…' : 'Notify me' }}
+          </button>
+        </div>
+        <p class="modal-note">No spam. Unsubscribe anytime.</p>
+      } @else {
+        <div class="modal-emoji">🎉</div>
+        <h2>You're on the list!</h2>
+        <p>We'll email <strong>{{ email() }}</strong> the moment we go live on 25 July 2026.</p>
+        <button class="btn-primary" (click)="modal.close()" style="margin-top:8px">Done</button>
+      }
+    </div>
+  </div>
+}

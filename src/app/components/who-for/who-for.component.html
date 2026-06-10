@@ -1,0 +1,26 @@
+<section class="who" id="who">
+  <div class="container">
+    <div class="who-inner">
+      <div class="who-left">
+        <span class="section-label">Solutions</span>
+        <h2 class="section-title">Built for businesses<br/>that move product</h2>
+        <p class="section-sub">
+          Whether you run a single trading shop or a multi-branch distribution group,
+          Rheotrade scales with you — without the enterprise price tag.
+        </p>
+        <button class="btn-primary" (click)="modal.open()">Start your free trial</button>
+      </div>
+      <div class="who-cards">
+        @for (s of segments; track s.title) {
+          <div class="who-card" appScrollReveal>
+            <div class="icon-tile" [style.background]="s.color">{{ s.icon }}</div>
+            <div class="who-card-text">
+              <h4>{{ s.title }}</h4>
+              <p>{{ s.body }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

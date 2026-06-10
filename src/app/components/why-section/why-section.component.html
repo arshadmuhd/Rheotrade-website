@@ -1,0 +1,20 @@
+<section class="why">
+  <div class="why-blob blob-1"></div>
+  <div class="why-blob blob-2"></div>
+  <div class="container">
+    <div class="why-header">
+      <span class="section-label">Why Rheotrade</span>
+      <h2 class="section-title">One source of truth for your business</h2>
+      <p class="section-sub">Most companies patch together 4–6 tools. Every seam leaks data, time, and money. Rheotrade removes the seams.</p>
+    </div>
+    <div class="why-grid">
+      @for (r of reasons; track r.n) {
+        <div class="why-card" appScrollReveal>
+          <div class="why-num">{{ r.n }}</div>
+          <h3>{{ r.title }}</h3>
+          <p>{{ r.body }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

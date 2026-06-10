@@ -1,0 +1,14 @@
+<section class="stats-section">
+  <div class="stats-blob blob-1"></div>
+  <div class="stats-blob blob-2"></div>
+  <div class="container">
+    <div class="stats-grid">
+      @for (s of stats; track s.label) {
+        <div class="stat-item" appScrollReveal>
+          <div class="stat-number">{{ s.displayed }}</div>
+          <div class="stat-label">{{ s.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

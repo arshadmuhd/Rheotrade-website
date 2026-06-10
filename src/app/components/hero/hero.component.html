@@ -1,0 +1,121 @@
+<section class="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="hero-blob blob-3"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Left copy -->
+      <div class="hero-copy">
+        <div class="hero-badge">
+          <span class="pill">✦ Accounting + Trading — unified</span>
+        </div>
+        <h1>
+          Run your entire business
+          <span class="accent">in one flow.</span>
+        </h1>
+        <p class="hero-sub">
+          Sales, purchase, inventory and accounts — connected, compliant, and accurate.
+          Built for trading businesses across <strong>India &amp; the GCC</strong>.
+        </p>
+        <div class="hero-cta">
+          <button class="btn-primary" (click)="modal.open()">
+            Start Free — it's free to try
+          </button>
+          <button class="btn-ghost" (click)="modal.open()">
+            ▶&nbsp; Watch demo
+          </button>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-avatars">
+            <div class="trust-avatar" style="background:#3b82f6">A</div>
+            <div class="trust-avatar" style="background:#1f9d63">M</div>
+            <div class="trust-avatar" style="background:#e8763a">R</div>
+            <div class="trust-avatar" style="background:#7c5cdb">S</div>
+          </div>
+          <span class="trust-text">Trusted by <strong>500+ businesses</strong> across 7 countries</span>
+        </div>
+      </div>
+
+      <!-- Right dashboard visual -->
+      <div class="hero-visual">
+        <div class="float-card float-card-1">
+          <div class="float-label">Revenue (Oct)</div>
+          <div class="float-value">₹12.4L</div>
+          <div class="float-sub">↑ 18% vs last month</div>
+        </div>
+
+        <div class="float-card float-card-2">
+          <div class="float-row">
+            <span class="float-icon">✅</span>
+            <div>
+              <div class="float-label">GST filed</div>
+              <div class="float-filed">On time · GSTR-1</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-card float-card-3">
+          <div class="float-label">Open invoices</div>
+          <div class="float-value" style="font-size:22px">24</div>
+          <div class="float-pending">₹3.2L pending</div>
+        </div>
+
+        <div class="dashboard-main">
+          <div class="db-header">
+            <div class="db-dots">
+              <div class="db-dot"></div>
+              <div class="db-dot"></div>
+              <div class="db-dot"></div>
+            </div>
+            <span class="db-title">Rheotrade — Dashboard</span>
+          </div>
+          <div class="db-content">
+            <div class="db-stat-row">
+              <div class="db-stat">
+                <div class="db-stat-label">Revenue</div>
+                <div class="db-stat-value">₹48.2L</div>
+                <div class="db-stat-change">↑ 23%</div>
+              </div>
+              <div class="db-stat">
+                <div class="db-stat-label">Purchases</div>
+                <div class="db-stat-value">₹31.4L</div>
+                <div class="db-stat-change">↑ 11%</div>
+              </div>
+              <div class="db-stat">
+                <div class="db-stat-label">Profit</div>
+                <div class="db-stat-value">₹16.8L</div>
+                <div class="db-stat-change">↑ 31%</div>
+              </div>
+            </div>
+            <div class="db-chart-area">
+              <div class="db-chart-label">Monthly Revenue — FY 2025–26</div>
+              <div class="bar-chart">
+                @for (h of bars; track h; let last = $last) {
+                  <div class="bar" [class.active]="last || h === 90" [style.height.%]="h"></div>
+                }
+              </div>
+            </div>
+            <div class="db-table">
+              <div class="db-row">
+                <span class="db-row-name">Al Noor Trading — #1042</span>
+                <span class="db-row-val">₹2,40,000</span>
+                <span class="badge badge-green">Paid</span>
+              </div>
+              <div class="db-row">
+                <span class="db-row-name">Metro Pharma — PO #386</span>
+                <span class="db-row-val">₹88,500</span>
+                <span class="badge badge-yellow">Pending</span>
+              </div>
+              <div class="db-row">
+                <span class="db-row-name">Sunrise Retail — #1043</span>
+                <span class="db-row-val">₹1,12,000</span>
+                <span class="badge badge-green">Paid</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

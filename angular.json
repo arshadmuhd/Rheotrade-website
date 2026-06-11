@@ -80,7 +80,7 @@
               "sourceMap": true
             },
             "gh-pages": {
-              "baseHref": "/Rheotrade-website/",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",

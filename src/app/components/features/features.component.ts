@@ -17,7 +17,7 @@ export class FeaturesComponent {
     { icon: '🏛️', color: 'var(--rose)',  title: 'GST & VAT Built In',      body: 'India GST (GSTR-1, 2A, 3B, e-way) and GCC VAT handled natively. File returns directly, reconcile ITC automatically. No add-on needed.' },
     { icon: '🌐', color: 'var(--sky)',   title: 'Multi-Currency & RTL',    body: 'Transact in INR, AED, SAR, USD and more. Full Arabic RTL interface. Exchange rate management and revaluation built in.' },
     { icon: '🏢', color: 'var(--mint)',  title: 'Multi-Company',           body: 'Manage multiple companies, branches, or cost centres under one login. Consolidated reports at group level in one click.' },
-    { icon: '⚡', color: 'var(--peach)', title: 'Workflow & Approvals',    body: 'Custom approval chains for POs, expenses, and payments. Enforce controls without slowing down your team.' },
-    { icon: '🔄', color: 'var(--lilac)', title: 'Settlement & Reconciliation', body: 'Match bank statements, settle advances against invoices, and close the month cleanly — in minutes, not days.' },
+    { icon: '📈', color: 'var(--peach)', title: 'Live Business Insights',   body: 'Real-time dashboards show your revenue, profit, and cash position as it happens — not at month end. Make decisions on live numbers.' },
+    { icon: '🌍', color: 'var(--lilac)', title: 'India + GCC, One Platform', body: 'The only platform built natively for both markets. Switch between INR and AED books, entities, and compliance rules — from a single login.' },
   ];
 }

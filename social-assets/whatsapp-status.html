@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060d1a"/>
+      <stop offset="45%" style="stop-color:#102a4c"/>
+      <stop offset="100%" style="stop-color:#0a1e38"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3254"/>
+      <stop offset="100%" style="stop-color:#111e35"/>
+    </linearGradient>
+    <filter id="bigGlow">
+      <feGaussianBlur stdDeviation="100" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="50" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── BG ── -->
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+
+  <!-- Glow blobs -->
+  <circle cx="900" cy="300" r="400" fill="#3b82f6" opacity="0.07" filter="url(#bigGlow)"/>
+  <circle cx="100" cy="1600" r="380" fill="#6366f1" opacity="0.07" filter="url(#bigGlow)"/>
+  <circle cx="540" cy="960" r="300" fill="#1d4ed8" opacity="0.05" filter="url(#bigGlow)"/>
+
+  <!-- Dot grid -->
+  <pattern id="dots" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+    <circle cx="24" cy="24" r="1.5" fill="#ffffff" opacity="0.035"/>
+  </pattern>
+  <rect width="1080" height="1920" fill="url(#dots)"/>
+
+  <!-- ── LIVE BADGE (TOP) ── -->
+  <rect x="350" y="100" width="380" height="60" rx="30" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <circle cx="382" cy="130" r="7" fill="#22c55e"/>
+  <text x="410" y="137" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="700" fill="#93c5fd" letter-spacing="2">WE ARE LIVE  🚀</text>
+
+  <!-- ── LOGO SECTION ── -->
+  <rect x="460" y="210" width="160" height="160" rx="36" fill="#1a3a6b"/>
+  <rect x="460" y="210" width="160" height="160" rx="36" fill="url(#blueGrad)" opacity="0.25"/>
+  <!-- Big R -->
+  <text x="540" y="320" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="96" font-weight="800" fill="#60a5fa">R</text>
+
+  <!-- Wordmark -->
+  <text x="540" y="440" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="80" font-weight="800" letter-spacing="-2">
+    <tspan fill="#60a5fa">Rheo</tspan><tspan fill="#f1f5f9">trade</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="540" y="498" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="500" fill="#64748b" letter-spacing="0.5">Accounting + Trading, unified</text>
+
+  <!-- Divider -->
+  <rect x="200" y="536" width="680" height="1.5" fill="url(#blueGrad)" opacity="0.4"/>
+
+  <!-- ── MAIN HEADLINE ── -->
+  <text x="540" y="632" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="80" font-weight="800" fill="#ffffff" letter-spacing="-2">Run your</text>
+  <text x="540" y="722" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="80" font-weight="800" fill="#ffffff" letter-spacing="-2">entire business</text>
+  <text x="540" y="812" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="80" font-weight="800" fill="url(#blueGrad)" letter-spacing="-2">in one flow.</text>
+
+  <text x="540" y="880" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="400" fill="#94a3b8">Sales · Purchase · Inventory · Accounts</text>
+  <text x="540" y="918" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="600" fill="#64748b">Built for India &amp; the GCC</text>
+
+  <!-- ── FEATURE CARDS ── -->
+  <!-- Card 1 -->
+  <rect x="80" y="968" width="440" height="140" rx="24" fill="url(#cardGrad)" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="120" y="1022" font-family="'Plus Jakarta Sans', sans-serif" font-size="38">📊</text>
+  <text x="178" y="1017" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="700" fill="#e2e8f0">Accounts</text>
+  <text x="178" y="1047" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" fill="#64748b">&amp; Ledger</text>
+  <text x="120" y="1090" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" fill="#475569">Live P&amp;L · Balance Sheet</text>
+
+  <!-- Card 2 -->
+  <rect x="560" y="968" width="440" height="140" rx="24" fill="url(#cardGrad)" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="600" y="1022" font-family="'Plus Jakarta Sans', sans-serif" font-size="38">🧾</text>
+  <text x="658" y="1017" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="700" fill="#e2e8f0">Sales &amp;</text>
+  <text x="658" y="1047" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" fill="#64748b">Invoicing</text>
+  <text x="600" y="1090" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" fill="#475569">GST · VAT · Collections</text>
+
+  <!-- Card 3 -->
+  <rect x="80" y="1128" width="440" height="140" rx="24" fill="url(#cardGrad)" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="120" y="1182" font-family="'Plus Jakarta Sans', sans-serif" font-size="38">📦</text>
+  <text x="178" y="1177" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="700" fill="#e2e8f0">Inventory</text>
+  <text x="178" y="1207" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" fill="#64748b">Management</text>
+  <text x="120" y="1250" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" fill="#475569">Batch · Expiry · Multi-WH</text>
+
+  <!-- Card 4 -->
+  <rect x="560" y="1128" width="440" height="140" rx="24" fill="url(#cardGrad)" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="600" y="1182" font-family="'Plus Jakarta Sans', sans-serif" font-size="38">🌐</text>
+  <text x="658" y="1177" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="700" fill="#e2e8f0">Multi-Currency</text>
+  <text x="658" y="1207" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" fill="#64748b">&amp; Arabic RTL</text>
+  <text x="600" y="1250" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" fill="#475569">INR · AED · SAR · BHD</text>
+
+  <!-- ── COUNTRIES ROW ── -->
+  <rect x="80" y="1305" width="920" height="100" rx="20" fill="#0f1e33" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="540" y="1348" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" font-weight="600" fill="#475569" letter-spacing="1">AVAILABLE IN 7 COUNTRIES</text>
+  <text x="540" y="1390" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="32" letter-spacing="8">🇮🇳 🇦🇪 🇸🇦 🇧🇭 🇴🇲 🇰🇼 🇶🇦</text>
+
+  <!-- ── DIVIDER ── -->
+  <rect x="200" y="1438" width="680" height="1" fill="url(#blueGrad)" opacity="0.3"/>
+
+  <!-- ── URL SECTION ── -->
+  <text x="540" y="1520" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="32" font-weight="600" fill="#64748b">Visit us at</text>
+  <text x="540" y="1574" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="800" fill="#60a5fa" letter-spacing="-0.5">rheotrade.arshadmuhd.com</text>
+
+  <!-- CTA Button -->
+  <rect x="240" y="1614" width="600" height="80" rx="40" fill="url(#btnGrad)"/>
+  <text x="540" y="1663" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="0.5">Start Free Today  →</text>
+
+  <!-- ── BOTTOM BRAND ── -->
+  <rect x="200" y="1738" width="680" height="1" fill="url(#blueGrad)" opacity="0.2"/>
+
+  <text x="540" y="1800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#60a5fa">Rheo</tspan><tspan fill="#94a3b8">trade</tspan>
+  </text>
+  <text x="540" y="1836" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" fill="#334155">Complete Accounting + Trading · India &amp; GCC</text>
+
+  <!-- Launch stamp -->
+  <rect x="380" y="1865" width="320" height="44" rx="22" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="540" y="1893" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="17" font-weight="600" fill="#93c5fd">🗓  Launched · July 2026</text>
+</svg>
+
+</body>
+</html>

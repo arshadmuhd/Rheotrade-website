@@ -9,9 +9,30 @@ import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive'
   styleUrl: './testimonials.component.scss'
 })
 export class TestimonialsComponent {
-  testimonials = [
-    { initial: 'R', color: '#3b82f6', quote: '"We used to spend 3 days closing the month. With Rheotrade, it\'s done in 4 hours. The GST reconciliation alone saved us ₹40,000 in accountant fees."', name: 'Rajesh Kumar', role: 'Director · Kumar Trading Co., Mumbai' },
-    { initial: 'A', color: '#1f9d63', quote: '"Managing our Dubai and Bahrain entities together was a nightmare. Rheotrade handles the VAT, the AED/BHD conversions, and the consolidated P&L seamlessly."', name: 'Ahmed Al Mansouri', role: 'CFO · Al Noor Group, Dubai' },
-    { initial: 'P', color: '#7c5cdb', quote: '"The batch and expiry tracking is exactly what pharma distribution needs. We can see slow-moving stock and near-expiry items instantly — before they become write-offs."', name: 'Priya Nair', role: 'Operations Head · MediLine Pharma, Chennai' },
+  promises = [
+    {
+      icon: '📒',
+      color: 'var(--sky)',
+      inkColor: 'var(--sky-ink)',
+      headline: 'Always-accurate books.',
+      quote: 'Your accounts will be up to date every single day — without a single manual journal entry, ever.',
+      tag: 'Accounting'
+    },
+    {
+      icon: '🏛️',
+      color: 'var(--mint)',
+      inkColor: 'var(--mint-ink)',
+      headline: 'Tax that just works.',
+      quote: 'File your GST or VAT return without opening a spreadsheet. Compliance is built in, not bolted on.',
+      tag: 'GST & VAT'
+    },
+    {
+      icon: '⚡',
+      color: 'var(--lilac)',
+      inkColor: 'var(--lilac-ink)',
+      headline: 'Live on day one.',
+      quote: 'Go from sign-up to your first invoice in under 10 minutes. No consultant, no data migration, no waiting.',
+      tag: 'Onboarding'
+    },
   ];
 }

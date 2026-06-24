@@ -44,4 +44,18 @@ p {
   &:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
 }
 
-@media (max-width: 640px) { .cta-banner { padding: 48px 24px; } }
+@media (max-width: 768px) {
+  .cta-outer { margin-bottom: 56px; }
+  .cta-banner { padding: 56px 40px; }
+  p { font-size: 16px; }
+}
+@media (max-width: 640px) {
+  .cta-outer { margin: 0 0 48px; }
+  .cta-banner { padding: 48px 24px; border-radius: 24px; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .btn-white, .btn-white-ghost { width: 100%; justify-content: center; }
+}
+@media (max-width: 480px) {
+  .cta-banner { padding: 40px 20px; }
+  p { font-size: 15px; }
+}

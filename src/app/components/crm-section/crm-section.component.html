@@ -1,0 +1,198 @@
+<!-- ── INTRO ─────────────────────────────────────────── -->
+<section class="crm-intro">
+  <div class="container">
+    <div class="crm-intro-inner">
+
+      <div class="crm-intro-text" appScrollReveal>
+        <div class="cs-banner">
+          <span class="cs-dot"></span>
+          Coming after launch · Phase 2
+        </div>
+        <span class="section-label">Rheotrade CRM</span>
+        <h2 class="section-title">Capture leads.<br>Close deals.<br>Create orders.</h2>
+        <p class="section-sub">
+          A fully built-in CRM that connects your sales pipeline directly to your accounts.
+          No third-party tools, no data-sync nightmares — when a deal is won, a Sales Order
+          appears instantly.
+        </p>
+        <div class="pill-row">
+          <span class="pill">📋 Custom Pipelines</span>
+          <span class="pill">📲 WhatsApp Leads</span>
+          <span class="pill">📣 Meta &amp; Google Ads</span>
+          <span class="pill">🔗 ERP Integration</span>
+          <span class="pill">📊 Funnel Analytics</span>
+        </div>
+        <div class="intro-cta">
+          <button class="btn-primary" (click)="modal.open()">Join the waitlist →</button>
+          <a class="btn-ghost" href="#crm-features">See features ↓</a>
+        </div>
+      </div>
+
+      <!-- Mini Kanban visual -->
+      <div class="crm-visual" appScrollReveal>
+        <div class="mk-header">
+          <span class="mk-title">🏷️ Sales Pipeline — Q3 2026</span>
+          <span class="mk-badge">4 deals closing</span>
+        </div>
+        <div class="mk-board">
+          @for (col of kanbanCols; track col.name) {
+            <div class="mk-col">
+              <div class="mk-col-head" [class]="col.cls">{{ col.name }}</div>
+              @for (deal of col.deals; track deal.name) {
+                <div class="mk-card" [class.won-card]="col.cls === 'won'">
+                  <div class="mk-card-name">{{ deal.name }}</div>
+                  <div class="mk-card-val">{{ deal.val }}</div>
+                  <span class="mk-tag" [class]="deal.tagClass">{{ deal.tag }}</span>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 3 PILLARS ──────────────────────────────────────── -->
+<section class="crm-pillars">
+  <div class="container">
+    <div class="pillars-header" appScrollReveal>
+      <span class="section-label">Three pillars</span>
+      <h2 class="section-title">Your CRM, built the right way.</h2>
+      <p class="section-sub">
+        Most CRMs are disconnected from your books. Rheotrade CRM is the same platform —
+        your pipeline talks to your accounts natively.
+      </p>
+    </div>
+    <div class="pillars-grid">
+      @for (p of pillars; track p.title) {
+        <div class="pillar-card" appScrollReveal [style.--accent]="p.accent">
+          <div class="pillar-icon" [style.background]="p.color">{{ p.icon }}</div>
+          <h3 class="pillar-title">{{ p.title }}</h3>
+          <p class="pillar-body">{{ p.body }}</p>
+          <ul class="pillar-list">
+            @for (f of p.features; track f) {
+              <li>{{ f }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── CHANNELS ───────────────────────────────────────── -->
+<section class="crm-channels">
+  <div class="container">
+    <div class="channels-inner">
+
+      <div class="channels-text" appScrollReveal>
+        <span class="section-label">Lead channels</span>
+        <h2 class="section-title">Every lead,<br>one inbox.</h2>
+        <p class="section-sub">
+          Wherever your customers find you — WhatsApp, a Facebook ad, Google search, or your
+          website form — every enquiry lands in the same CRM, tagged by source automatically.
+        </p>
+        <div class="channel-list">
+          @for (ch of channels; track ch.name) {
+            <div class="channel-item">
+              <div class="channel-icon" [style.background]="ch.bg">{{ ch.icon }}</div>
+              <div class="channel-info">
+                <div class="channel-name">{{ ch.name }}</div>
+                <div class="channel-desc">{{ ch.desc }}</div>
+              </div>
+              <span class="channel-badge"
+                [style.background]="ch.badgeBg"
+                [style.color]="ch.badgeInk">{{ ch.badge }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Flow diagram -->
+      <div class="channel-flow" appScrollReveal>
+        <div class="cf-title">How leads flow into your CRM</div>
+        <div class="cf-sources">
+          <div class="cf-src"><span>💬</span><div><b>WhatsApp</b><span>Business API</span></div></div>
+          <div class="cf-src"><span>📣</span><div><b>Meta Ads</b><span>FB + Instagram</span></div></div>
+          <div class="cf-src"><span>🔍</span><div><b>Google Ads</b><span>Lead Forms</span></div></div>
+          <div class="cf-src"><span>🌐</span><div><b>Web Form</b><span>Your website</span></div></div>
+        </div>
+        <div class="cf-arrow">↓</div>
+        <div class="cf-unified">
+          <div class="cf-unified-title">🎯 Unified Lead Inbox</div>
+          <div class="cf-unified-sub">All leads · auto-tagged by source · one view</div>
+        </div>
+        <div class="cf-to-erp">↓ Deal Won ↓</div>
+        <div class="cf-erp">
+          <div class="cf-erp-item">👤 Customer Record</div>
+          <div class="cf-erp-item">🧾 Sales Order</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FULL FUNNEL ────────────────────────────────────── -->
+<section class="crm-funnel">
+  <div class="container">
+    <div class="funnel-header" appScrollReveal>
+      <span class="section-label">The full funnel</span>
+      <h2 class="section-title">Lead to invoice, zero gaps.</h2>
+      <p class="section-sub">
+        The complete journey from first enquiry to paid receipt — all inside Rheotrade, all connected.
+      </p>
+    </div>
+    <div class="funnel-steps" appScrollReveal>
+      @for (step of funnelSteps; track step.title; let last = $last) {
+        <div class="f-step">
+          <div class="f-num" [style.background]="step.bg">{{ step.icon }}</div>
+          <div class="f-body">
+            <div class="f-title">{{ step.title }}</div>
+            <div class="f-desc">{{ step.body }}</div>
+          </div>
+        </div>
+        @if (!last) { <div class="f-connector">→</div> }
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURE GRID ───────────────────────────────────── -->
+<section class="crm-features" id="crm-features">
+  <div class="container">
+    <div class="features-header" appScrollReveal>
+      <span class="section-label">Everything included</span>
+      <h2 class="section-title">All the CRM tools<br>your team needs.</h2>
+      <p class="section-sub">No add-ons, no per-seat fees on features — everything below is in the plan.</p>
+    </div>
+    <div class="feat-grid">
+      @for (f of featureCards; track f.title) {
+        <div class="feat-card" appScrollReveal>
+          <div class="feat-icon" [style.background]="f.bg">{{ f.icon }}</div>
+          <div>
+            <div class="feat-title">{{ f.title }}</div>
+            <div class="feat-body">{{ f.body }}</div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Roadmap strip -->
+    <div class="roadmap-strip" appScrollReveal>
+      <div class="roadmap-icon">🗓️</div>
+      <div class="roadmap-text">
+        <h3>When is CRM coming?</h3>
+        <p>The ERP (Accounts, Sales, Purchase, Inventory, Tax) launches July 2026. CRM follows in Phase 2 — the full funnel, right after the core is live and stable.</p>
+        <div class="roadmap-badges">
+          <span class="rb done">✓ Phase 1 · ERP core · July 2026</span>
+          <span class="rb next">→ Phase 2 · CRM · Q4 2026</span>
+          <span class="rb later">Phase 3 · WhatsApp + Meta · 2027</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

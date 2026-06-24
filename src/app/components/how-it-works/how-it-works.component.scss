@@ -36,5 +36,13 @@
 }
 
 @media (max-width: 768px) {
+  .how { padding: 64px 0; }
+  .how-header { margin-bottom: 40px; }
   .steps-grid { grid-template-columns: 1fr; gap: 32px; &::before { display: none; } }
+  .step { padding: 0; }
+}
+@media (max-width: 480px) {
+  .how { padding: 48px 0; }
+  .step-number { width: 52px; height: 52px; font-size: 18px; border-radius: 16px; }
+  .step h3 { font-size: 16px; }
 }

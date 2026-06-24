@@ -10,11 +10,11 @@ import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive'
 })
 export class WhySectionComponent {
   reasons = [
-    { n: '01', title: 'Accurate by default',          body: 'Every sale, purchase, and payment auto-posts to the ledger. Reconciliation happens in the background — not at month-end panic.' },
-    { n: '02', title: 'Compliant out of the box',     body: 'India GST and GCC VAT are not bolt-ons — they\'re native. Tax codes, return filing, and ITC reconciliation are built in from day one.' },
-    { n: '03', title: 'Grows with you',               body: 'Start solo. Add branches, currencies, and entities as you grow — no migration, no new software, no consultants.' },
-    { n: '04', title: 'Built for your region',        body: 'India and the GCC have unique accounting rules and tax regimes. Rheotrade was built for them, not adapted for them.' },
-    { n: '05', title: 'No hidden implementation cost',body: 'Cloud-native, self-service setup. No consultant fees, no data migration contracts. A subscription that pays for itself in week one.' },
-    { n: '06', title: 'Arabic RTL, first class',      body: 'Full right-to-left interface for Arabic users — not just mirrored CSS. Your team works in the language they think in.' },
+    { n: '01', title: 'Everything connected',          body: 'Every sale, purchase, and stock movement flows into your accounts automatically. One entry, zero duplication — your books are always up to date.' },
+    { n: '02', title: 'Tax built in, not bolted on',  body: 'India GST and GCC VAT are woven into every transaction from the start. No add-ons, no manual tax entries — it just works, everywhere you operate.' },
+    { n: '03', title: 'Grows with your business',     body: 'Start as a single company. Add branches, currencies, and new markets as you expand — without switching software or migrating data.' },
+    { n: '04', title: 'Made for India & the GCC',     body: 'Rheotrade understands your markets — the currencies, the tax regimes, the languages, and how trading businesses actually work in this region.' },
+    { n: '05', title: 'Up and running in minutes',    body: 'Sign up, configure your company, and start trading on day one. No IT team, no consultant, no six-month rollout. Just your business, live instantly.' },
+    { n: '06', title: 'Arabic & English, natively',   body: 'A true bilingual platform — switch between full Arabic RTL and English LTR at any time. Every screen, every report, every invoice.' },
   ];
 }

@@ -88,3 +88,15 @@
 .featured .check { color: #6ee7b7; }
 
 @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+@media (max-width: 768px) {
+  .pricing { padding: 64px 0; }
+  .pricing-header { margin-bottom: 6px; }
+  .pricing-toggle { margin-bottom: 36px; margin-top: 20px; }
+}
+@media (max-width: 480px) {
+  .pricing { padding: 48px 0; }
+  .pricing-grid { max-width: 100%; }
+  .pricing-card { padding: 24px; }
+  .plan-price { font-size: 32px; }
+  .pricing-toggle { gap: 8px; flex-wrap: wrap; justify-content: center; }
+}

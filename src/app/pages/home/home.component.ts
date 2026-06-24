@@ -9,6 +9,7 @@ import { WhySectionComponent } from '../../components/why-section/why-section.co
 import { PricingComponent } from '../../components/pricing/pricing.component';
 import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
 import { CtaBannerComponent } from '../../components/cta-banner/cta-banner.component';
+import { CrmSectionComponent } from '../../components/crm-section/crm-section.component';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ import { CtaBannerComponent } from '../../components/cta-banner/cta-banner.compo
     WhoForComponent,
     HowItWorksComponent,
     WhySectionComponent,
+    CrmSectionComponent,
     PricingComponent,
     TestimonialsComponent,
     CtaBannerComponent,

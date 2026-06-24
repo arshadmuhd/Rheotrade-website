@@ -1,23 +1,41 @@
-<section class="testimonials">
+<section class="promises">
   <div class="container">
-    <div class="t-header">
-      <span class="section-label">Testimonials</span>
-      <h2 class="section-title">Businesses love Rheotrade</h2>
+    <div class="p-header" appScrollReveal>
+      <span class="section-label">Our Promise</span>
+      <h2 class="section-title">We mean every word of this.</h2>
+      <p class="section-sub">
+        No vague claims. Here's exactly what Rheotrade commits to every business that runs on it.
+      </p>
     </div>
-    <div class="t-grid">
-      @for (t of testimonials; track t.name) {
-        <div class="card t-card" appScrollReveal>
-          <div class="stars">★★★★★</div>
-          <p class="quote">{{ t.quote }}</p>
-          <div class="author">
-            <div class="avatar" [style.background]="t.color">{{ t.initial }}</div>
-            <div>
-              <div class="author-name">{{ t.name }}</div>
-              <div class="author-role">{{ t.role }}</div>
-            </div>
+
+    <div class="p-grid">
+      @for (p of promises; track p.tag) {
+        <div class="p-card" appScrollReveal>
+          <div class="p-card-top">
+            <div class="stars">★★★★★</div>
+            <span class="p-tag" [style.background]="p.color" [style.color]="p.inkColor">
+              {{ p.tag }}
+            </span>
+          </div>
+          <div class="p-icon-wrap" [style.background]="p.color">
+            <span class="p-icon">{{ p.icon }}</span>
+          </div>
+          <h3 class="p-headline">{{ p.headline }}</h3>
+          <p class="p-quote">"{{ p.quote }}"</p>
+          <div class="p-footer">
+            <span class="p-sig">— The Rheotrade Promise</span>
           </div>
         </div>
       }
+    </div>
+
+    <div class="p-guarantee" appScrollReveal>
+      <span class="guarantee-icon">🛡️</span>
+      <p>
+        So confident we back it with action —
+        <strong>early users get 3 months free on Growth</strong>
+        if we don't deliver on any of the above.
+      </p>
     </div>
   </div>
 </section>

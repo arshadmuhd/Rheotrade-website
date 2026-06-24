@@ -28,3 +28,13 @@
 @media (max-width: 1024px) {
   .who-inner { grid-template-columns: 1fr; gap: 40px; }
 }
+@media (max-width: 768px) {
+  .who { padding: 64px 0; }
+  .who-left button { width: 100%; justify-content: center; }
+}
+@media (max-width: 480px) {
+  .who { padding: 48px 0; }
+  .who-card { padding: 16px; gap: 12px; }
+  .who-card-text h4 { font-size: 14.5px; }
+  .who-card-text p  { font-size: 13px; }
+}

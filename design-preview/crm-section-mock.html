@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rheotrade CRM Section — Design Mock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:            #f0f4fa;
+      --surface:       #ffffff;
+      --primary:       #3b82f6;
+      --primary-deep:  #2563eb;
+      --navy:          #102a4c;
+      --text:          #26334d;
+      --text-mid:      #6b7891;
+      --text-soft:     #a4afc4;
+      --border:        #e9eef7;
+      --mint:          #d8f3e3;  --mint-ink:  #1f9d63;
+      --peach:         #ffe9dc;  --peach-ink: #e8763a;
+      --lilac:         #ece8fd;  --lilac-ink: #7c5cdb;
+      --sky:           #dcecfe;  --sky-ink:   #2f7fe0;
+      --rose:          #ffe2ec;  --rose-ink:  #e0567e;
+      --amber:         #fef3c7;  --amber-ink: #d97706;
+      --radius-card:   20px;
+      --shadow-soft:   0 4px 18px rgba(59,130,246,.07);
+      --shadow-lift:   0 12px 40px rgba(59,130,246,.14);
+      --font:          'Plus Jakarta Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      display: inline-block; font-size: 12px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--primary); background: var(--sky);
+      padding: 5px 14px; border-radius: 100px;
+    }
+    .section-title { font-size: clamp(28px,4vw,44px); font-weight: 800; color: var(--navy); letter-spacing: -.03em; line-height: 1.15; margin-top: 10px; margin-bottom: 14px; }
+    .section-sub { font-size: 17px; color: var(--text-mid); max-width: 580px; line-height: 1.7; }
+
+    /* ── COMING SOON BANNER ── */
+    .cs-banner {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #fef3c7, #fffbeb);
+      border: 1.5px solid #fde68a; border-radius: 100px;
+      padding: 6px 18px; font-size: 13px; font-weight: 700;
+      color: #92400e; margin-bottom: 20px;
+    }
+    .cs-dot { width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    /* ══════════════════════════════════════════════
+       SECTION 1 — CRM HERO / INTRO
+    ══════════════════════════════════════════════ */
+    .crm-intro { padding: 100px 0 60px; }
+    .crm-intro-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .crm-intro-text .section-sub { margin-bottom: 32px; }
+    .crm-pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+    .crm-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 13px; font-weight: 600;
+      border: 1.5px solid var(--border); background: var(--surface);
+      color: var(--text-mid);
+    }
+    .crm-cta { display: flex; align-items: center; gap: 14px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--primary); color: #fff;
+      padding: 14px 28px; border-radius: 100px;
+      font-weight: 700; font-size: 15px; border: none; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(59,130,246,.30);
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(59,130,246,.38); background: var(--primary-deep); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--navy);
+      padding: 13px 24px; border-radius: 100px;
+      font-weight: 600; font-size: 15px;
+      border: 1.5px solid var(--border); cursor: pointer;
+      transition: transform .2s, border-color .2s;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: var(--primary); }
+
+    /* Mini Kanban board visual */
+    .crm-visual {
+      background: var(--surface); border-radius: 24px;
+      border: 1.5px solid var(--border); padding: 24px;
+      box-shadow: var(--shadow-lift);
+    }
+    .mini-kanban-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .mini-kanban-title { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .mini-kanban-badge {
+      font-size: 11px; font-weight: 700; background: var(--mint);
+      color: var(--mint-ink); padding: 3px 10px; border-radius: 100px;
+    }
+    .mini-kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .mk-col { display: flex; flex-direction: column; gap: 8px; }
+    .mk-col-head {
+      font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-soft); padding: 0 0 6px; border-bottom: 2px solid;
+    }
+    .mk-col-head.new   { border-color: var(--sky-ink);  color: var(--sky-ink); }
+    .mk-col-head.qual  { border-color: var(--peach-ink); color: var(--peach-ink); }
+    .mk-col-head.prop  { border-color: var(--lilac-ink); color: var(--lilac-ink); }
+    .mk-col-head.won   { border-color: var(--mint-ink);  color: var(--mint-ink); }
+    .mk-card {
+      background: var(--bg); border-radius: 10px;
+      border: 1.5px solid var(--border); padding: 10px 12px;
+      font-size: 12px;
+    }
+    .mk-card-name { font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .mk-card-val  { color: var(--text-mid); }
+    .mk-card-tag  {
+      display: inline-block; margin-top: 6px; font-size: 10px; font-weight: 700;
+      padding: 2px 8px; border-radius: 100px;
+    }
+    .mk-card-tag.wa  { background: #d1fae5; color: #065f46; }
+    .mk-card-tag.meta{ background: var(--sky); color: var(--sky-ink); }
+    .mk-card-tag.web { background: var(--lilac); color: var(--lilac-ink); }
+    .mk-card-tag.won-tag { background: var(--mint); color: var(--mint-ink); }
+    .mk-card.won-card { background: #f0fdf4; border-color: #bbf7d0; }
+    .mk-card.won-card .mk-card-name { color: var(--mint-ink); }
+
+    /* ══════════════════════════════════════════════
+       SECTION 2 — 3 CORE PILLARS
+    ══════════════════════════════════════════════ */
+    .crm-pillars { padding: 60px 0; }
+    .pillars-header { text-align: center; margin-bottom: 52px; }
+    .pillars-header .section-sub { margin: 0 auto; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pillar-card {
+      background: var(--surface); border-radius: var(--radius-card);
+      border: 1.5px solid var(--border); padding: 36px 28px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .25s, box-shadow .25s;
+      position: relative; overflow: hidden;
+    }
+    .pillar-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
+    .pillar-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      border-radius: 4px 4px 0 0;
+    }
+    .pillar-card.c-blue::before  { background: var(--primary); }
+    .pillar-card.c-green::before { background: var(--mint-ink); }
+    .pillar-card.c-purple::before{ background: var(--lilac-ink); }
+    .pillar-icon {
+      width: 56px; height: 56px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; margin-bottom: 20px;
+    }
+    .pillar-title { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 12px; letter-spacing: -.02em; }
+    .pillar-body  { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; }
+    .pillar-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .pillar-features li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 14px; color: var(--text); font-weight: 500;
+    }
+    .pillar-features li::before { content: '✓'; color: var(--primary); font-weight: 800; margin-top: 1px; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════════
+       SECTION 3 — LEAD CHANNELS
+    ══════════════════════════════════════════════ */
+    .crm-channels { padding: 60px 0; }
+    .channels-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .channels-text .section-sub { margin-bottom: 36px; }
+    .channel-list { display: flex; flex-direction: column; gap: 16px; }
+    .channel-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 18px 20px;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .channel-item:hover { transform: translateX(4px); box-shadow: var(--shadow-soft); border-color: var(--primary); }
+    .channel-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .channel-info { flex: 1; }
+    .channel-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .channel-desc { font-size: 13px; color: var(--text-mid); line-height: 1.5; }
+    .channel-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: .05em;
+      padding: 3px 9px; border-radius: 100px;
+      text-transform: uppercase; flex-shrink: 0; align-self: flex-start;
+      margin-top: 2px;
+    }
+
+    /* Channel flow visual */
+    .channel-flow {
+      background: var(--surface); border-radius: 24px;
+      border: 1.5px solid var(--border); padding: 28px;
+      box-shadow: var(--shadow-lift);
+    }
+    .cf-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 20px; text-align: center; }
+    .cf-sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+    .cf-src {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 12px 14px;
+    }
+    .cf-src-icon { font-size: 20px; }
+    .cf-src-name { font-size: 12px; font-weight: 700; color: var(--navy); }
+    .cf-src-sub  { font-size: 11px; color: var(--text-soft); }
+    .cf-arrow {
+      text-align: center; font-size: 22px; color: var(--primary);
+      margin-bottom: 16px; opacity: .7;
+    }
+    .cf-unified {
+      background: linear-gradient(135deg, var(--sky), var(--lilac));
+      border-radius: 14px; padding: 16px 20px;
+      text-align: center; margin-bottom: 16px;
+    }
+    .cf-unified-title { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+    .cf-unified-sub   { font-size: 12px; color: var(--text-mid); }
+    .cf-to-erp { text-align: center; font-size: 22px; color: var(--mint-ink); margin-bottom: 12px; }
+    .cf-erp {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+    .cf-erp-item {
+      background: var(--mint); border-radius: 10px;
+      padding: 10px 14px; text-align: center;
+      font-size: 12px; font-weight: 700; color: var(--mint-ink);
+    }
+
+    /* ══════════════════════════════════════════════
+       SECTION 4 — THE FULL FUNNEL
+    ══════════════════════════════════════════════ */
+    .crm-funnel { padding: 60px 0; }
+    .funnel-header { text-align: center; margin-bottom: 52px; }
+    .funnel-header .section-sub { margin: 0 auto; }
+    .funnel-steps {
+      display: flex; align-items: flex-start; gap: 0;
+      position: relative; justify-content: center;
+    }
+    .funnel-steps::before {
+      content: ''; position: absolute;
+      top: 32px; left: 10%; right: 10%;
+      height: 2px; background: linear-gradient(90deg, var(--primary), var(--mint-ink));
+      z-index: 0;
+    }
+    .f-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 12px; position: relative; z-index: 1; }
+    .f-step-num {
+      width: 64px; height: 64px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; font-weight: 800;
+      border: 3px solid var(--surface); margin-bottom: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    .f-step-title { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .f-step-body  { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+    .f-arrow { font-size: 20px; color: var(--primary); padding-top: 20px; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════════
+       SECTION 5 — CRM FEATURE GRID
+    ══════════════════════════════════════════════ */
+    .crm-features { padding: 60px 0 100px; }
+    .features-header { text-align: center; margin-bottom: 48px; }
+    .features-header .section-sub { margin: 0 auto; }
+    .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feat-card {
+      background: var(--surface); border-radius: 18px;
+      border: 1.5px solid var(--border); padding: 26px 24px;
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .feat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+    .feat-icon {
+      width: 46px; height: 46px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .feat-text .feat-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .feat-text .feat-body  { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════════
+       PHASE BADGE STRIP
+    ══════════════════════════════════════════════ */
+    .phase-strip {
+      background: linear-gradient(135deg, #0f172a, #1e3a5f);
+      border-radius: 20px; padding: 36px 40px; margin-top: 48px;
+      display: flex; align-items: center; gap: 32px;
+    }
+    .phase-strip-icon { font-size: 40px; flex-shrink: 0; }
+    .phase-strip-text h3 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -.02em; }
+    .phase-strip-text p  { font-size: 15px; color: #94a3b8; line-height: 1.6; }
+    .phase-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .phase-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 700;
+    }
+    .phase-badge.done  { background: rgba(34,197,94,.15); color: #4ade80; }
+    .phase-badge.next  { background: rgba(251,191,36,.15); color: #fbbf24; }
+    .phase-badge.later { background: rgba(148,163,184,.1); color: #94a3b8; }
+
+    /* responsiveness */
+    @media (max-width: 1024px) {
+      .crm-intro-inner { grid-template-columns: 1fr; gap: 40px; }
+      .pillars-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .channels-inner { grid-template-columns: 1fr; gap: 40px; }
+      .feat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .crm-intro { padding: 64px 0 40px; }
+      .funnel-steps { flex-direction: column; align-items: center; }
+      .funnel-steps::before { display: none; }
+      .f-step { flex-direction: row; text-align: left; width: 100%; max-width: 340px; gap: 16px; }
+      .f-step-num { margin-bottom: 0; flex-shrink: 0; }
+      .f-arrow { display: none; }
+      .phase-strip { flex-direction: column; gap: 16px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .feat-grid { grid-template-columns: 1fr; }
+      .cf-sources { grid-template-columns: 1fr; }
+      .crm-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─────────────────────────────────────────────────────
+     SECTION 1 — CRM INTRO
+──────────────────────────────────────────────────────── -->
+<section class="crm-intro">
+  <div class="container">
+    <div class="crm-intro-inner">
+
+      <div class="crm-intro-text">
+        <div class="cs-banner">
+          <span class="cs-dot"></span>
+          Coming after launch · Phase 2
+        </div>
+        <span class="section-label">Rheotrade CRM</span>
+        <h2 class="section-title">Capture leads.<br>Close deals.<br>Create orders.</h2>
+        <p class="section-sub">
+          A fully built-in CRM that connects your sales pipeline directly to your accounts.
+          No third-party tools, no data-sync nightmares — when a deal is won, a Sales Order
+          appears instantly.
+        </p>
+
+        <div class="crm-pill-row">
+          <span class="crm-pill">📋 Custom Pipelines</span>
+          <span class="crm-pill">📲 WhatsApp Leads</span>
+          <span class="crm-pill">📣 Meta & Google Ads</span>
+          <span class="crm-pill">🔗 ERP Integration</span>
+          <span class="crm-pill">📊 Funnel Analytics</span>
+        </div>
+
+        <div class="crm-cta">
+          <button class="btn-primary">Join the waitlist →</button>
+          <button class="btn-ghost">See the modules ↓</button>
+        </div>
+      </div>
+
+      <!-- Mini Kanban visual -->
+      <div class="crm-visual">
+        <div class="mini-kanban-header">
+          <span class="mini-kanban-title">🏷️ Sales Pipeline — Q3 2026</span>
+          <span class="mini-kanban-badge">4 deals closing</span>
+        </div>
+        <div class="mini-kanban">
+          <div class="mk-col">
+            <div class="mk-col-head new">New</div>
+            <div class="mk-card">
+              <div class="mk-card-name">Ravi Textiles</div>
+              <div class="mk-card-val">₹1.8L</div>
+              <span class="mk-card-tag wa">WhatsApp</span>
+            </div>
+            <div class="mk-card">
+              <div class="mk-card-name">Gulf Traders LLC</div>
+              <div class="mk-card-val">AED 22,000</div>
+              <span class="mk-card-tag meta">Meta Ad</span>
+            </div>
+          </div>
+          <div class="mk-col">
+            <div class="mk-col-head qual">Qualified</div>
+            <div class="mk-card">
+              <div class="mk-card-name">Priya Electronics</div>
+              <div class="mk-card-val">₹3.2L</div>
+              <span class="mk-card-tag web">Web Form</span>
+            </div>
+          </div>
+          <div class="mk-col">
+            <div class="mk-col-head prop">Proposal</div>
+            <div class="mk-card">
+              <div class="mk-card-name">Al-Noor Supplies</div>
+              <div class="mk-card-val">AED 48,000</div>
+              <span class="mk-card-tag meta">Meta Ad</span>
+            </div>
+            <div class="mk-card">
+              <div class="mk-card-name">Mehta & Sons</div>
+              <div class="mk-card-val">₹6.4L</div>
+              <span class="mk-card-tag wa">WhatsApp</span>
+            </div>
+          </div>
+          <div class="mk-col">
+            <div class="mk-col-head won">Won ✓</div>
+            <div class="mk-card won-card">
+              <div class="mk-card-name">Sharma Pharma</div>
+              <div class="mk-card-val">₹9.1L</div>
+              <span class="mk-card-tag won-tag">→ Sales Order</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────
+     SECTION 2 — 3 CORE PILLARS
+──────────────────────────────────────────────────────── -->
+<section class="crm-pillars">
+  <div class="container">
+    <div class="pillars-header">
+      <span class="section-label">Three pillars</span>
+      <h2 class="section-title">Your CRM, built the right way.</h2>
+      <p class="section-sub">
+        Most CRMs are disconnected from your books. Rheotrade CRM is the same platform —
+        your pipeline talks to your accounts natively.
+      </p>
+    </div>
+    <div class="pillars-grid">
+
+      <div class="pillar-card c-blue">
+        <div class="pillar-icon" style="background:var(--sky)">🎯</div>
+        <h3 class="pillar-title">Dynamic Pipelines</h3>
+        <p class="pillar-body">
+          Design your own sales process — no code, no consultant. Create stages, set colours,
+          assign probabilities, and build Kanban boards that match how your team actually sells.
+        </p>
+        <ul class="pillar-features">
+          <li>Drag-and-drop stage builder</li>
+          <li>Multiple pipelines (Sales, Support, Custom)</li>
+          <li>Custom fields per lead or deal</li>
+          <li>Probability % per stage</li>
+          <li>Team-based deal ownership</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card c-green">
+        <div class="pillar-icon" style="background:var(--mint)">📲</div>
+        <h3 class="pillar-title">Multi-Channel Leads</h3>
+        <p class="pillar-body">
+          Leads from WhatsApp, Meta Ads, Google Ads, and your website all flow into one unified
+          inbox — automatically tagged by source, so you know what's converting.
+        </p>
+        <ul class="pillar-features">
+          <li>WhatsApp Business API (2-way messaging)</li>
+          <li>Meta Lead Ads webhook</li>
+          <li>Google Lead Form extensions</li>
+          <li>Embedded web forms</li>
+          <li>Manual entry with full history</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card c-purple">
+        <div class="pillar-icon" style="background:var(--lilac)">⚡</div>
+        <h3 class="pillar-title">Won Deal → Sales Order</h3>
+        <p class="pillar-body">
+          Mark a deal Won and Rheotrade instantly creates the customer record and a
+          pre-filled Sales Order — no re-keying, no copy-paste, no gap between CRM and ERP.
+        </p>
+        <ul class="pillar-features">
+          <li>Auto-create or link existing customer</li>
+          <li>Spawn Quotation or Sales Order instantly</li>
+          <li>Carry deal value, currency, salesperson</li>
+          <li>Full traceability: lead → deal → invoice</li>
+          <li>GST / VAT applied from the first line</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────
+     SECTION 3 — LEAD CHANNELS
+──────────────────────────────────────────────────────── -->
+<section class="crm-channels" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="channels-inner">
+
+      <div class="channels-text">
+        <span class="section-label">Lead channels</span>
+        <h2 class="section-title">Every lead, one inbox.</h2>
+        <p class="section-sub">
+          Wherever your customers find you — WhatsApp, a Facebook ad, Google search, or your
+          website form — every enquiry lands in the same CRM, tagged by source automatically.
+        </p>
+        <div class="channel-list">
+
+          <div class="channel-item">
+            <div class="channel-icon" style="background:#d1fae5">💬</div>
+            <div class="channel-info">
+              <div class="channel-name">WhatsApp Business</div>
+              <div class="channel-desc">Incoming messages create leads instantly. Reply with approved templates right from your CRM. Highest value channel in India & GCC.</div>
+            </div>
+            <span class="channel-badge" style="background:#d1fae5;color:#065f46">Priority</span>
+          </div>
+
+          <div class="channel-item">
+            <div class="channel-icon" style="background:var(--sky)">📣</div>
+            <div class="channel-info">
+              <div class="channel-name">Meta Lead Ads (FB + Instagram)</div>
+              <div class="channel-desc">Lead form submissions from Facebook and Instagram ads arrive in real time via webhook — no manual exports.</div>
+            </div>
+            <span class="channel-badge" style="background:var(--sky);color:var(--sky-ink)">Webhook</span>
+          </div>
+
+          <div class="channel-item">
+            <div class="channel-icon" style="background:var(--peach)">🔍</div>
+            <div class="channel-info">
+              <div class="channel-name">Google Lead Form Ads</div>
+              <div class="channel-desc">Google Ads lead form extensions push directly into Rheotrade CRM the moment someone clicks your ad.</div>
+            </div>
+            <span class="channel-badge" style="background:var(--peach);color:var(--peach-ink)">API</span>
+          </div>
+
+          <div class="channel-item">
+            <div class="channel-icon" style="background:var(--lilac)">🌐</div>
+            <div class="channel-info">
+              <div class="channel-name">Web Forms</div>
+              <div class="channel-desc">Embed a Rheotrade lead form on your website. Each submission becomes a lead with full source tracking.</div>
+            </div>
+            <span class="channel-badge" style="background:var(--lilac);color:var(--lilac-ink)">Embed</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Channel flow diagram -->
+      <div class="channel-flow">
+        <div class="cf-title">How leads flow into your CRM</div>
+        <div class="cf-sources">
+          <div class="cf-src">
+            <span class="cf-src-icon">💬</span>
+            <div>
+              <div class="cf-src-name">WhatsApp</div>
+              <div class="cf-src-sub">Business API</div>
+            </div>
+          </div>
+          <div class="cf-src">
+            <span class="cf-src-icon">📣</span>
+            <div>
+              <div class="cf-src-name">Meta Ads</div>
+              <div class="cf-src-sub">FB + Instagram</div>
+            </div>
+          </div>
+          <div class="cf-src">
+            <span class="cf-src-icon">🔍</span>
+            <div>
+              <div class="cf-src-name">Google Ads</div>
+              <div class="cf-src-sub">Lead Forms</div>
+            </div>
+          </div>
+          <div class="cf-src">
+            <span class="cf-src-icon">🌐</span>
+            <div>
+              <div class="cf-src-name">Web Form</div>
+              <div class="cf-src-sub">Your website</div>
+            </div>
+          </div>
+        </div>
+        <div class="cf-arrow">↓</div>
+        <div class="cf-unified">
+          <div class="cf-unified-title">🎯 Unified Lead Inbox</div>
+          <div class="cf-unified-sub">All leads · auto-tagged by source · one view</div>
+        </div>
+        <div class="cf-to-erp">↓ Deal Won ↓</div>
+        <div class="cf-erp">
+          <div class="cf-erp-item">👤 Customer Record</div>
+          <div class="cf-erp-item">🧾 Sales Order</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────
+     SECTION 4 — THE FULL FUNNEL
+──────────────────────────────────────────────────────── -->
+<section class="crm-funnel">
+  <div class="container">
+    <div class="funnel-header">
+      <span class="section-label">The full funnel</span>
+      <h2 class="section-title">Lead to invoice, zero gaps.</h2>
+      <p class="section-sub">
+        The complete journey from first enquiry to paid receipt — all inside Rheotrade, all connected.
+      </p>
+    </div>
+
+    <div class="funnel-steps">
+      <div class="f-step">
+        <div class="f-step-num" style="background:var(--sky)">📲</div>
+        <div>
+          <div class="f-step-title">Lead Captured</div>
+          <div class="f-step-body">WhatsApp, Meta, Google, or your website form</div>
+        </div>
+      </div>
+
+      <div class="f-step">
+        <div class="f-step-num" style="background:var(--peach)">🗂️</div>
+        <div>
+          <div class="f-step-title">Nurtured in CRM</div>
+          <div class="f-step-body">Pipeline board, activities, WhatsApp follow-ups</div>
+        </div>
+      </div>
+
+      <div class="f-step">
+        <div class="f-step-num" style="background:var(--lilac)">🤝</div>
+        <div>
+          <div class="f-step-title">Deal Won</div>
+          <div class="f-step-body">Stage moved to Won — ERP seam fires instantly</div>
+        </div>
+      </div>
+
+      <div class="f-step">
+        <div class="f-step-num" style="background:var(--mint)">🧾</div>
+        <div>
+          <div class="f-step-title">Sales Order</div>
+          <div class="f-step-body">Pre-filled from deal: customer, value, currency</div>
+        </div>
+      </div>
+
+      <div class="f-step">
+        <div class="f-step-num" style="background:#fef3c7">📄</div>
+        <div>
+          <div class="f-step-title">Invoice Sent</div>
+          <div class="f-step-body">GST / VAT calculated, PDF dispatched to customer</div>
+        </div>
+      </div>
+
+      <div class="f-step">
+        <div class="f-step-num" style="background:#d1fae5">✅</div>
+        <div>
+          <div class="f-step-title">Payment &amp; Books</div>
+          <div class="f-step-body">Receipt posted, accounts updated, reports live</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────
+     SECTION 5 — FEATURE CARDS
+──────────────────────────────────────────────────────── -->
+<section class="crm-features" style="background: var(--surface); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="features-header">
+      <span class="section-label">Everything included</span>
+      <h2 class="section-title">All the CRM tools your team needs.</h2>
+      <p class="section-sub">No add-ons, no per-seat fees on features — everything below is in the plan.</p>
+    </div>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <div class="feat-icon" style="background:var(--sky)">🏷️</div>
+        <div class="feat-text">
+          <div class="feat-title">Kanban Board</div>
+          <div class="feat-body">Drag deals across stages. Visual pipeline with colour-coded columns and deal values at a glance.</div>
+        </div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" style="background:var(--mint)">🛠️</div>
+        <div class="feat-text">
+          <div class="feat-title">Custom Fields</div>
+          <div class="feat-body">Add text, number, date, dropdown, or checkbox fields to leads and deals — no code needed.</div>
+        </div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" style="background:var(--lilac)">📅</div>
+        <div class="feat-text">
+          <div class="feat-title">Activity Timeline</div>
+          <div class="feat-body">Calls, emails, meetings, WhatsApp messages — every touchpoint logged with due dates and notes.</div>
+        </div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" style="background:var(--peach)">📊</div>
+        <div class="feat-text">
+          <div class="feat-title">Funnel Analytics</div>
+          <div class="feat-body">Conversion rates by stage, leads by source, source ROI — which channel is actually making you money.</div>
+        </div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" style="background:var(--rose)">👥</div>
+        <div class="feat-text">
+          <div class="feat-title">Team Performance</div>
+          <div class="feat-body">Salesperson scoreboards, activities due vs. overdue, quota tracking per rep and team.</div>
+        </div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" style="background:var(--amber)">🌐</div>
+        <div class="feat-text">
+          <div class="feat-title">Arabic + English</div>
+          <div class="feat-body">Full RTL support in CRM too — switch languages globally, customer-facing names render in the right script.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Phase strip -->
+    <div class="phase-strip">
+      <div class="phase-strip-icon">🗓️</div>
+      <div class="phase-strip-text">
+        <h3>Roadmap — when is this coming?</h3>
+        <p>The ERP (Accounts, Sales, Purchase, Inventory, Tax) launches July 2026. CRM follows in Phase 2 — the full funnel, right after the core is live and stable.</p>
+        <div class="phase-badges">
+          <span class="phase-badge done">✓ Phase 1 · ERP core · July 2026</span>
+          <span class="phase-badge next">→ Phase 2 · CRM · Q4 2026</span>
+          <span class="phase-badge later">Phase 3 · WhatsApp + Meta · 2027</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
